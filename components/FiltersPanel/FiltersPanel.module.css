@@ -1,0 +1,117 @@
+.aside {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  height: fit-content;
+  border-radius: 20px;
+  padding: 24px;
+  flex-shrink: 0;
+  background-color: #f7f7f7;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.label {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #6c717b;
+}
+.inputWrapper {
+  position: relative;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c717b;
+  font-size: 20px;
+}
+.inputIcon:focus {
+  color: #101828;
+}
+.input {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 16px;
+  outline: none;
+  padding: 18px 150px 18px 40px;
+
+  width: 312px;
+  height: 56px;
+}
+
+.filtersTitle {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #101828;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.groupTitle {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #6c717b;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  color: #475467;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.btnSearch {
+  padding: 16px 60px;
+  background-color: #829b91;
+  border: none;
+  border-radius: 200px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.btnSearch:hover {
+  background-color: #6d7b75;
+}
+
+.btnClear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+  border: 1px solid #dadde1;
+  border-radius: 200px;
+  padding: 16px 32px;
+
+  background-color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: #101828;
+}
+
+.btnClear:hover {
+  border: 1px solid #6d7b75;
+}

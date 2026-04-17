@@ -1,0 +1,6 @@
+.page {
+  display: flex;
+  gap: 64px;
+  padding: 48px 64px;
+  min-height: calc(100vh - 72px);
+}

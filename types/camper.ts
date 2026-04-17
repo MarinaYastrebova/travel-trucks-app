@@ -57,7 +57,7 @@ export interface CamperDetails extends CamperListItem {
   updatedAt: string;
 }
 
-export interface Review {
+export interface ReviewType {
   id: string;
   camperId: string;
   reviewer_name: string;
@@ -66,7 +66,7 @@ export interface Review {
   createdAt: string;
 }
 
-export interface Filters {
+export interface FiltersType {
   location?: string;
   form?: CamperForm;
   transmission?: Transmission;
