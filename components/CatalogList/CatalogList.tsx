@@ -3,6 +3,7 @@
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { getCampers } from '@/lib/api';
 import { FiltersType } from '@/types/camper';
+import Loading from '@/app/loading';
 import CamperCard from '@/components/CamperCard/CamperCard';
 import styles from './CatalogList.module.css';
 
@@ -25,7 +26,7 @@ export default function CatalogList({ filters }: Props) {
     });
 
   if (isLoading) {
-    return <p className={styles.message}>Loading...</p>;
+    return <Loading />;
   }
 
   if (isError) {
@@ -33,6 +34,10 @@ export default function CatalogList({ filters }: Props) {
   }
 
   const campers = data?.pages.flatMap(page => page.campers) ?? [];
+
+  if (campers.length === 0) {
+    return <p className={styles.message}>No campers found. Try changing filters.</p>;
+  }
 
   return (
     <div className={styles.wrapper}>
@@ -50,7 +55,7 @@ export default function CatalogList({ filters }: Props) {
           onClick={() => fetchNextPage()}
           disabled={isFetchingNextPage}
         >
-          {isFetchingNextPage ? 'Loading...' : 'Load more'}
+          {isFetchingNextPage ? <Loading /> : 'Load more'}
         </button>
       )}
     </div>
