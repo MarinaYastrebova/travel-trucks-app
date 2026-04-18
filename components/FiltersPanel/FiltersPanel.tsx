@@ -52,7 +52,7 @@ export default function Filters({ onFilter }: Props) {
 
       <div className={styles.group}>
         <p className={styles.groupTitle}>Camper form</p>
-        {(['alcove', 'panel_pan', 'integrated', 'semi_integrated'] as CamperForm[]).map(type => (
+        {(['alcove', 'panel_van', 'integrated', 'semi_integrated'] as CamperForm[]).map(type => (
           <label key={type} className={styles.radioLabel}>
             <input
               type="radio"

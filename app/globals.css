@@ -1,6 +1,5 @@
 :root {
   --background: #ffffff;
-  /* --foreground: #171717; */
 }
 
 html {
@@ -14,11 +13,7 @@ body {
 }
 
 body {
-  /* min-height: 100%;
-  color: var(--foreground); */
   font-family: 'Inter', sans-serif;
-  /* -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
 }
 
 * {

@@ -1,10 +1,10 @@
-import { CampersResponse, CamperDetails, Review, Filters } from '@/types/camper';
+import { CampersResponse, CamperDetails, ReviewType, FiltersType } from '@/types/camper';
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export async function getCampers(
   page: number = 1,
-  filters: Filters = {}
+  filters: FiltersType = {}
 ): Promise<CampersResponse> {
   const params = new URLSearchParams();
 
@@ -35,7 +35,7 @@ export async function getCamperById(id: string): Promise<CamperDetails> {
   return response.json();
 }
 
-export async function getCamperReviews(id: string): Promise<Review[]> {
+export async function getCamperReviews(id: string): Promise<ReviewType[]> {
   const response = await fetch(`${BASE_URL}/campers/${id}/reviews`);
 
   if (!response.ok) {

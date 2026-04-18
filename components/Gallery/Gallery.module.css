@@ -1,0 +1,50 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 638px;
+  gap: 27px;
+}
+
+.mainSwiper {
+  width: 100%;
+  height: 505px;
+  border-radius: 16px;
+}
+
+.mainSlide {
+  position: relative;
+  width: 100%;
+  height: 505px;
+}
+
+.mainImage {
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.thumbsSwiper {
+  width: 100%;
+  height: 144px;
+}
+
+.thumbSlide {
+  position: relative;
+  width: 100%;
+  height: 144px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.thumbSlide:hover {
+  opacity: 1;
+}
+
+:global(.swiper-slide-thumb-active) .thumbSlide {
+  opacity: 1;
+}
+
+.thumbImage {
+  object-fit: cover;
+  border-radius: 8px;
+}
