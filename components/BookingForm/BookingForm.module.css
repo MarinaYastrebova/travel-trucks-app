@@ -71,36 +71,3 @@
   opacity: 0.7;
   cursor: not-allowed;
 }
-
-.success {
-  padding: 8px;
-  background-color: #d1fae5;
-  border-radius: 200px;
-  font-size: 14px;
-  color: #065f46;
-  margin-bottom: 16px;
-}
-
-.error {
-  padding: 8px;
-  background-color: #fee2e2;
-  border-radius: 200px;
-  font-size: 14px;
-  color: #991b1b;
-  margin-bottom: 16px;
-}
-.success,
-.error {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.closeBtn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
-  color: inherit;
-  padding: 0 4px;
-  text-align: right;
-}

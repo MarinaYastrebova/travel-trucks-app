@@ -39,7 +39,11 @@ export default function CamperCard({ camper }: Props) {
             {camper.location}
           </span>
         </div>
-
+        <p className={styles.description}>
+          {camper.description.length > 100
+            ? camper.description.slice(0, 100) + '...'
+            : camper.description}
+        </p>
         <ul className={styles.amenities}>
           <li>
             <BsFuelPump />

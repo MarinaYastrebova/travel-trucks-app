@@ -2,7 +2,6 @@
   padding: 64px 64px 278px 64px;
   display: flex;
   flex-direction: column;
-
   gap: 24px;
 }
 .hero {

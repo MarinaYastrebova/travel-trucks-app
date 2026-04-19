@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 import { createBooking } from '@/lib/api';
 import styles from './BookingForm.module.css';
 
@@ -12,62 +13,42 @@ export default function BookingForm({ camperId }: Props) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState('');
 
   const handleSubmit = async () => {
     if (!name.trim()) {
-      setError('Please enter your name');
+      toast.error('Please enter your name');
       return;
     }
 
     if (!email.trim()) {
-      setError('Please enter your email');
+      toast.error('Please enter your email');
       return;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      setError('Please enter a valid email');
+      toast.error('Please enter a valid email');
       return;
     }
 
     setIsLoading(true);
-    setError('');
 
     try {
       await createBooking(camperId, { name, email });
-      setSuccess(true);
+      toast.success('Booking request sent successfully!');
       setName('');
       setEmail('');
     } catch {
-      setError('Something went wrong. Please try again.');
+      toast.error('Something went wrong. Please try again.');
     } finally {
       setIsLoading(false);
     }
   };
   return (
     <div className={styles.wrapper}>
+      <Toaster position="top-right" />
       <h2 className={styles.title}>Book your campervan now</h2>
       <p className={styles.subtitle}>Stay connected! We are always ready to help you.</p>
-
-      {success && (
-        <div className={styles.success}>
-          ✅ Booking request sent successfully!
-          <button className={styles.closeBtn} onClick={() => setSuccess(false)}>
-            ✕
-          </button>
-        </div>
-      )}
-
-      {error && (
-        <div className={styles.error}>
-          {error}
-          <button className={styles.closeBtn} onClick={() => setError('')}>
-            ✕
-          </button>
-        </div>
-      )}
 
       <div className={styles.form}>
         <input
